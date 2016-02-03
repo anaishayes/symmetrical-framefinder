@@ -17,6 +17,7 @@ class Run_Transdecoder():
 		self.__cleanup_dirs(file_name)
 
 	# bash command for Transdecoder step 1
+	# file_needs to include pathway to /groups/ortilab
 	def __find_long_ORFs(self, file_name):
 		subprocess.call(['/home/amhayes/TransDecoder-2.0.1/TransDecoder.LongOrfs', '-t', file_name])
 
