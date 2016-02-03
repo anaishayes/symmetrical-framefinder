@@ -4,9 +4,9 @@ import subprocess
 
 class Directory_Setup():
 
-	file_name = "/groups/ortilab/FISH_T1K/Fish-T1K-Transcriptomes" + ""
-	out_dir = "/groups/ortilab/FISH_T1K/Fish-T1K-Transcriptomes" + ""
-	new_path = "/groups/ortilab/FISH_T1K/Fish-T1K-Transcriptomes" + ""
+	file_name = "/groups/ortilab/FISH_T1K/Fish-T1K-Transcriptomes/" + ""
+	out_dir = "/groups/ortilab/FISH_T1K/Fish-T1K-Transcriptomes/" + ""
+	new_path = "/groups/ortilab/FISH_T1K/Fish-T1K-Transcriptomes/" + ""
 
 	common_substring = "_SOAPTrans1.03.scaffold.fasta"
 
