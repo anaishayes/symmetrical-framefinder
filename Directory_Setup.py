@@ -4,14 +4,13 @@ import subprocess
 
 class Directory_Setup():
 
-	file_name = ""
-	out_dir = ""
-	new_path = ""
+	file_name = "/groups/ortilab/FISH_T1K/Fish-T1K-Transcriptomes" + ""
+	out_dir = "/groups/ortilab/FISH_T1K/Fish-T1K-Transcriptomes" + ""
+	new_path = "/groups/ortilab/FISH_T1K/Fish-T1K-Transcriptomes" + ""
 
 	common_substring = "_SOAPTrans1.03.scaffold.fasta"
 
 	def __init__(self, file_name):
-		# don't need path for file because we'll be running it from the directory
 		self.file_name = file_name
 		self.__make_directory()
 		self.__move_file()
