@@ -28,7 +28,7 @@ def parallelizeFileProcessing(ext):
         """
         files = glob.glob(ext)
 
-        pool = ThreadPool(4)
+        pool = ThreadPool(16)
 
         pool.map(runFileTransdecoder, files)
 
