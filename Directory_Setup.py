@@ -25,7 +25,7 @@ class Directory_Setup():
 		else:
 			print "Directory exists"
 			sys.exit()
-		self.new_path = self.out_dir+"/"+self.file_name
+		self.new_path = self.out_dir+self.file_name
 
 	# moves fasta file from parent directory into out_dir,
 	# by renaming the file and adding the new directory before it
