@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 import sys
 import glob
 
@@ -13,30 +12,33 @@ To execute, run in bash `./Main.py *.[FILE EXTENSION]
 For example, to run on all .fasta files, do `./Main.py *.fasta`
 """
 
-def run_commands(file):
-        #print file
+def runFileTransdecoder(file):
+        """
+        Pipe file to Transdecoder program and sets up output and input directory 
+        before processing it. 
+        """
         ds = Directory_Setup(file)
         rt = Run_Transdecoder(ds.get_new_path())
 
-def globbing(ext):
+def parallelizeFileProcessing(ext):
         """
         Locate all files ending with a file extension provided to the constructor
-        and pipes each of them to the Transdecoder Program.
+        and pipes each of them to the Transdecoder Program in parallel.
 
         """
         files = glob.glob(ext)
 
         pool = ThreadPool(4)
 
-        pool.map(run_commands, files)
+        pool.map(runFileTransdecoder, files)
 
         pool.close()
         pool.join()
 
-        print "Done with globbing"
+        print "Completed parallel processing of files"
 
 
 if __name__ == "__main__":
         print "Running TransDecoder on all %s files in current working directory" % sys.argv[1]
         print ""
-        globbing(sys.argv[1])
+        parallelizeFileProcessing(sys.argv[1])
