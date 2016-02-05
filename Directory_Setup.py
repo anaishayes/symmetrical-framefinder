@@ -4,9 +4,9 @@ import subprocess
 
 class Directory_Setup():
 
-	file_name = "/groups/ortilab/FISH_T1K/Fish-T1K-Transcriptomes/" + ""
-	out_dir = "/groups/ortilab/FISH_T1K/Fish-T1K-Transcriptomes/" + ""
-	new_path = "/groups/ortilab/FISH_T1K/Fish-T1K-Transcriptomes/" + ""
+	file_name = ""
+	out_dir = ""
+	new_path = ""
 
 	common_substring = "_SOAPTrans1.03.scaffold.fasta"
 
@@ -18,14 +18,13 @@ class Directory_Setup():
 	# make directory based on the file's name
 	# argument file_name = string, name of fasta file working with
 	def __make_directory(self):
-	# before making directory, create directory name
 		self.out_dir = self.file_name.replace(self.common_substring, "")
 		if not os.path.exists(self.out_dir):
 			os.makedirs(self.out_dir)
 		else:
 			print "Directory exists"
 			sys.exit()
-		self.new_path = self.out_dir+self.file_name
+		self.new_path = self.out_dir+"/"+self.file_name
 
 	# moves fasta file from parent directory into out_dir,
 	# by renaming the file and adding the new directory before it
